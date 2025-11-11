@@ -1,65 +1,76 @@
-import Image from "next/image";
+'use client'
+
+import { motion } from 'framer-motion';
+
+// Portfolio Header component
+// Tailwind CSS is used for styling. Drop this component into a React/Next app
+// Make sure Tailwind and framer-motion are installed and configured.
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <header className="relative h-screen overflow-hidden bg-black text-white">
+      {/* decorative blobs */}
+      <div className="absolute -top-20 -right-40 w-96 h-96 rounded-full opacity-30 bg-[url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><defs/><g><circle cx=\'100\' cy=\'100\' r=\'100\' fill=\'%23590000' /></g></svg>')] blur-3xl transform rotate-12 animate-[float_8s_ease-in-out_infinite]" aria-hidden="true" />
+      <div className="absolute -bottom-32 -left-40 w-80 h-80 rounded-full opacity-25 bg-[url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><circle cx=\'100\' cy=\'100\' r=\'100\' fill=\'%23ffffff' /></svg>')] blur-2xl transform -rotate-6 animate-[float_10s_ease-in-out_infinite]" aria-hidden="true" />
+
+      <div className="max-w-6xl mx-auto px-6 py-20 relative z-10 grid md:grid-cols-2 gap-8 items-center">
+        <motion.div
+          initial={{ x: -80, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="space-y-6"
+        >
+          <p className="inline-block px-3 py-1 rounded-full text-sm font-semibold bg-[rgba(89,0,0,0.9)]">Բարև, ես Լիլիթ</p>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            Լիլիթ Բարեղամյան
+            <span className="block text-base sm:text-lg font-medium text-gray-300 mt-2">Front‑end developer · UI/UX enthusiast</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="text-gray-300 max-w-xl">
+            Ստեղծում եմ ժամանակակից, արագ ու գեղեցիկ վեբ ինտերֆեյսներ՝ ուշադրություն դարձնելով մանրուքներին, կատարողականությանը և մատչելիությանը.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+          <div className="flex gap-4 items-center">
+            <a href="#work" className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl font-semibold text-black bg-[#590000] shadow-2xl hover:scale-105 transition-transform">
+              Տեսնել աշխատանքները
+            </a>
+
+            <a href="#contact" className="inline-flex items-center gap-2 px-4 py-3 rounded-lg border border-gray-700 text-sm text-gray-200 hover:bg-white/5 transition">
+              Կապվել ինձ հետ
+            </a>
+          </div>
+
+          <div className="mt-4 text-sm text-gray-400">Կոդը, նախագծերը և բլոգը հասանելի են այստեղ՝ <a className="underline" href="https://lilitbareghamyan.vercel.app/">lilitbareghamyan.vercel.app</a></div>
+        </motion.div>
+
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex items-center justify-center"
+        >
+          <div className="w-130 h-100 rounded-3xl bg-gradient-to-br from-gray-900 to-black p-1 shadow-xl">
+            <div className="w-full h-full rounded-3xl bg-black flex items-center justify-center overflow-hidden relative">
+              {/* Profile image placeholder - replace src with your image */}
+              <img src="https://scontent.fevn4-2.fna.fbcdn.net/v/t39.30808-6/519685811_1141227137841403_8520830556761131481_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=vN0C6cdDCZUQ7kNvwG9lLzS&_nc_oc=Adkt7vtGIIq5fSfSuunFH0tRVa5cYFu1BYESgp0HbaIjBGWEUc7MK2OL3N92WrBuYUo&_nc_zt=23&_nc_ht=scontent.fevn4-2.fna&_nc_gid=I-gqoWm71L-WaPvrAaL3uA&oh=00_Afg97V55T1V5RFJAk1ZOixVOpIMB3bgsUtNZ4HFXWXXAwA&oe=6918DDF2" alt="Լիլիթ Բարեղամյան" className="object-cover w-full h-full" />
+
+              {/* small badge */}
+              <div className="absolute bottom-4 left-4 bg-[rgba(89,0,0,0.95)] px-3 py-1 rounded-full text-xs font-semibold">Open to work</div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <style>{`
+        @keyframes float {
+          0% { transform: translateY(0) }
+          50% { transform: translateY(12px) }
+          100% { transform: translateY(0) }
+        }
+      `}</style>
+    </header>
   );
 }
+
+
