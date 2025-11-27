@@ -1,48 +1,49 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 export function Contact() {
-  const socials = [
-    {
-      path: "/contact/linkedin.png",
-      name: "Linkedin",
-      link: "https://www.linkedin.com/in/lilitbareghamyan/",
-    },
-    {
-      path: "/contact/github.png",
-      name: "GitHub",
-      link: "https://github.com/bareghamyanlilit",
-    },
-    {
-      path: "/contact/instagram.png",
-      name: "instagram",
-      link: "https://www.instagram.com/lilit.bareghamyan",
-    },
-    {
-      path: "/contact/facebook.png",
-      name: "Facebook",
-      link: "https://www.facebook.com/lilit.baregamyan.2025",
-    },
-  ];
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
+
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: false });
   };
+
+  const validate = () => {
+    const newErrors = {
+      name: form.name.trim() === "",
+      email: !/\S+@\S+\.\S+/.test(form.email),
+      message: form.message.trim() === "",
+    };
+
+    setErrors(newErrors);
+    return !Object.values(newErrors).includes(true);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!validate()) return;
+
     setStatus("Sending...");
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      console.log(res);
+
       if (res.ok) {
         setStatus("✅ Message sent successfully");
         setForm({ name: "", email: "", message: "" });
@@ -55,46 +56,32 @@ export function Contact() {
     }
   };
 
+  const inputClasses = (error: boolean, value: string) =>
+    `p-4 text-lg  rounded-md md:rounded-xl outline-none transition border
+    ${
+      error
+        ? "border-red-600 focus:border-red-600 focus:ring-2 focus:ring-red-300"
+        : value
+        ? "border-green-600 focus:border-green-600 focus:ring-2 focus:ring-green-300"
+        : "border-gray-300 focus:border-red-600 focus:ring-2 focus:ring-red-200"
+    }`;
+
   return (
-    <div className="bg-black min-h-screen flex items-center justify-center px-4 py-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full max-w-6xl">
-        <div className="text-white flex flex-col gap-10">
-          <h1 className="text-6xl font-light">Contact us</h1>
-
-          <div className="bg-[#5f5f5f] flex items-center gap-4 p-6 rounded-xl text-xl text-white">
-            <span className="text-red-950 text-3xl">✉️</span>
-            <a href="mailto:baregamyanlilit36.gmail con">
-
-           baregamyanlilit36@gmail.com
-            </a>
-          </div>
-
-          <div className="bg-[#5f5f5f] flex items-center gap-4 p-6 rounded-xl text-xl text-white">
-            <span className="text-red-950 text-3xl">📞</span>
-            <a href="tel:+37477760204">
-
-            077-76-02-04
-            </a>
-          </div>
-
-          <div className="flex gap-6 mt-4">
-            {socials.map((item) => (
-              <a key={item.name} href={item.link}>
-                <div className="w-16 h-16 bg-[#5f5f5f] rounded-xl flex items-center justify-center hover:scale-110 transition">
-                  <Image
-                    src={item.path}
-                    width={30}
-                    height={30}
-                    alt={item.name}
-                    className="rounded-full"
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
+    <div className="min-h-screen flex items-center justify-center md:px-6 py-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 w-full max-w-6xl">
+        <div className="text-white flex flex-col gap-5 md:gap-10 px-6 md:px-0">
+          <h1 className="text-4xl text-center md:text-6xl font-semibold tracking-tight">
+            Contact <span className="text-red-950">Me</span>
+          </h1>
+          <Label
+            name="Email"
+            href="mailto:baregamyanlilit36@gmail.com"
+            text="baregamyanlilit36@gmail.com"
+          />
+          <Label name="Phone" href="tel:+37477760204" text="077-76-02-04" />
         </div>
 
-        <div className="bg-white rounded-xl px-10 py-12 shadow-xl">
+        <div className="bg-white  w-full md:w-auto md:rounded-2xl px-5 py-6 md:px-10 md:py-12 shadow-2xl border border-gray-200">
           <form onSubmit={handleSubmit} className="flex flex-col gap-8">
             <input
               type="text"
@@ -102,7 +89,7 @@ export function Contact() {
               placeholder="Your Name"
               value={form.name}
               onChange={handleChange}
-              className="border-b border-black p-3 text-lg outline-none"
+              className={inputClasses(errors.name, form.name)}
             />
 
             <input
@@ -111,7 +98,7 @@ export function Contact() {
               placeholder="Your Email"
               value={form.email}
               onChange={handleChange}
-              className="border-b border-black p-3 text-lg outline-none"
+              className={inputClasses(errors.email, form.email)}
             />
 
             <textarea
@@ -120,10 +107,10 @@ export function Contact() {
               placeholder="Your Message"
               value={form.message}
               onChange={handleChange}
-              className="border border-black p-4 text-lg rounded-lg resize-none"
+              className={inputClasses(errors.message, form.message)}
             />
 
-            <button className="cursor-pointer bg-red-950 text-white py-4 rounded-lg text-xl hover:bg-red-950 transition">
+            <button className="cursor-pointer bg-red-950 text-white py-4 rounded-xl text-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all">
               Send Message
             </button>
           </form>
@@ -133,6 +120,28 @@ export function Contact() {
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function Label({
+  name,
+  href,
+  text,
+}: {
+  name: string;
+  href: string;
+  text: string;
+}) {
+  return (
+    <div className="backdrop-blur-xl bg-white/5 p-3 md:p-6 rounded-md md:rounded-2xl shadow-xl ">
+      <p className="text-gray-200 text-lg">{name}</p>
+      <a
+        href={href}
+        className="text-base md:text-2xl font-medium hover:text-red-950 transition"
+      >
+        {text}
+      </a>
     </div>
   );
 }
