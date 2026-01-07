@@ -6,6 +6,7 @@ import { useState } from "react";
 const links = [
   { path: "/", name: "Home" },
   { path: "/about", name: "About" },
+  { path: "/works", name: "Works" },
   { path: "/contact", name: "Contact" },
 ];
 
@@ -13,11 +14,11 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="container py-4 px-3 md:py-6 md:px-8 flex justify-between items-center fixed z-100 justify-self-center backdrop-blur-md ">
+    <header className="container py-4 px-3 md:py-6 md:px-8 flex justify-between items-center fi+xed z-100 justify-self-center backdrop-blur-md ">
       
       {/* Logo */}
       <Link href="/" className="text-xl md:text-3xl font-bold ">
-        MyPortfolio
+        Front-End Developer
       </Link>
 
       {/* Desktop Menu */}
@@ -26,7 +27,7 @@ export function Header() {
           <Link
             key={link.path}
             href={link.path}
-            className="text-xl  hover:text-yellow-400 transition"
+            className="text-xl hover:text-red-950 transition"
           >
             {link.name}
           </Link>
@@ -64,7 +65,7 @@ export function Header() {
           <Link
             key={link.path}
             href={link.path}
-            className="text-xl text-white hover:text-yellow-400 transition"
+            className="text-xl text-white hover:text-red-950 transition"
             onClick={() => setIsOpen(false)} // close menu on click
           >
             {link.name}

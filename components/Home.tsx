@@ -14,7 +14,7 @@ export function Home() {
 
         <div className="h-full content-end grid  md:grid-cols-[1fr_1.5fr]">
           <div>
-            <ImageHome className=" opacity-50 drop-shadow-[0_0_10px_#888888] md:drop-shadow-[0_0_50px_#888888]" />
+            <ImageHome className=" opacity-50 drop-shadow-[0_0_10px_#f7f7f7c5] md:drop-shadow-[0_0_50px_#888888]" />
             <ImageHome className=" brightness-0 opacity-100 " />
           </div>
           <div className="static z-10 flex flex-col items-center  md:items-end gap-15 pb-20 lg:pb-30">

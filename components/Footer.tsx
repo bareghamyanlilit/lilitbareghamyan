@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-t-white sticky z-10 w-full bg-[#151515] text-white py-12 px-6 ">
+    <footer className=" sticky z-10 w-full bg-[#151515] text-white py-12 px-6 ">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
         {/* Left */}
         <div className="space-y-3">

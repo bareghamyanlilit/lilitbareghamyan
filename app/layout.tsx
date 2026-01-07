@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
-
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +20,7 @@ export default function RootLayout({
       <body className="bg-[#121211] text-[#888888]">
         <Header/>
         {children}
+        <Analytics/>
         <Footer/>
       </body>
     </html>
