@@ -1,7 +1,8 @@
 export const links = [
-  { path: "/", name: "Home" },
-  { path: "/about", name: "About" },
-  { path: "/contact", name: "Contact" },
+  { path: "/", name: "Գլխավոր" },
+  { path: "/about", name: "Իմ մասին" },
+  { path: "/works", name: "Աշխատանքներ" },
+  { path: "/contact", name: "Կապ" },
 ];
 
 export const socials = [
@@ -24,5 +25,28 @@ export const socials = [
     path: "/contact/facebook.png",
     name: "Facebook",
     link: "https://www.facebook.com/lilit.baregamyan.2025",
+  },
+];
+
+export const works = [
+  {
+    name: "Ejmiacni petakan qolej",
+    link: "https://epc.am",
+    src: "/epc.png",
+  },
+  {
+    name: "Hraviratoms",
+    link: "epc.am",
+    src: "/hraviratoms.png",
+  },
+  {
+    name: "Eyes Brand",
+    link: "https://eyesbrand.vercel.app/",
+    src: "/eyesBrand.png",
+  },
+  {
+    name: "Magini",
+    link: "https://magini.netlify.app/",
+    src: "/magini.png",
   },
 ];

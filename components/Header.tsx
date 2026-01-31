@@ -1,20 +1,14 @@
 "use client";
 
+import { links } from "@/const/const";
 import Link from "next/link";
 import { useState } from "react";
-
-const links = [
-  { path: "/", name: "Home" },
-  { path: "/about", name: "About" },
-  { path: "/works", name: "Works" },
-  { path: "/contact", name: "Contact" },
-];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="container py-4 px-3 md:py-6 md:px-8 flex justify-between items-center fi+xed z-100 justify-self-center backdrop-blur-md ">
+    <header className=" container py-4 px-3 md:py-6 md:px-8 flex justify-between items-center fixed z-100 justify-self-center backdrop-blur-[90%] ">
       
       {/* Logo */}
       <Link href="/" className="text-xl md:text-3xl font-bold ">

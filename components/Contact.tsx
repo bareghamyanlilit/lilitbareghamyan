@@ -71,14 +71,14 @@ export function Contact() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 w-full max-w-6xl">
         <div className="text-white flex flex-col gap-5 md:gap-10 px-6 md:px-0">
           <h1 className="text-4xl text-center md:text-6xl font-semibold tracking-tight">
-            Contact <span className="text-red-950">Me</span>
+            Պատվիրել <span className="text-red-950"></span>
           </h1>
           <Label
-            name="Email"
+            name="Էլ․ հասցե"
             href="mailto:baregamyanlilit36@gmail.com"
             text="baregamyanlilit36@gmail.com"
           />
-          <Label name="Phone" href="tel:+37477760204" text="077-76-02-04" />
+          <Label name="Հեռախոսահամար" href="tel:+37477760204" text="077-76-02-04" />
         </div>
 
         <div className="bg-white  w-full md:w-auto md:rounded-2xl px-5 py-6 md:px-10 md:py-12 shadow-2xl border border-gray-200">
@@ -86,7 +86,7 @@ export function Contact() {
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder="Ձեր անունը"
               value={form.name}
               onChange={handleChange}
               className={inputClasses(errors.name, form.name)}
@@ -95,7 +95,7 @@ export function Contact() {
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder="Ձեր էլ հասցեն"
               value={form.email}
               onChange={handleChange}
               className={inputClasses(errors.email, form.email)}
@@ -104,14 +104,14 @@ export function Contact() {
             <textarea
               name="message"
               rows={6}
-              placeholder="Your Message"
+              placeholder="Հաղորդագրություն (Հեռախոսահամարը ցանկալի է)"
               value={form.message}
               onChange={handleChange}
               className={inputClasses(errors.message, form.message)}
             />
 
             <button className="cursor-pointer bg-red-950 text-white py-4 rounded-xl text-xl shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all">
-              Send Message
+              Ուղարկել 
             </button>
           </form>
 

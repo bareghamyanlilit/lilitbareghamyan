@@ -12,11 +12,10 @@ export function Footer() {
             Lilit <span className="text-red-950">Bareghamyan</span>
           </h2>
           <p className="text-gray-300 max-w-sm">
-            Front-End Developer • Creating beautiful, fast and modern websites.
+            Front-End Developer
           </p>
         </div>
 
-        {/* Center Links */}
         <div className="flex flex-col gap-2 text-gray-300">
           {links.map((link) => (
             <Link
@@ -29,7 +28,6 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Social Icons */}
         <div className="flex gap-5  justify-center">
           {socials.map((item) => (
             <a key={item.name} href={item.link} target="_blank">
@@ -50,7 +48,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Bottom */}
       <div className="border-t border-white/10 mt-10 pt-6 text-center text-gray-400 text-sm">
         © {new Date().getFullYear()} All rights reserved • Created by{" "}
         <span className="text-red-950 font-semibold">Lilit Bareghamyan</span>

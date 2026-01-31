@@ -19,12 +19,11 @@ export function Home() {
           </div>
           <div className="static z-10 flex flex-col items-center  md:items-end gap-15 pb-20 lg:pb-30">
             <p className=" font-bold text-base lg:text-2xl 2xl:text-3xl ">
-              I build fast, elegant, and user-focused websites using React,
-              Next.js, and TypeScript
+              Նորաոճ և հասանելի վեբկայքեր՝ արագ, հարմար և մտածված լուծումներով
             </p>
 
             <button className="h-max md::h-max px-4 py-3 2xl:px-6 2xl:py-3 text-sm lg:text-base cursor-pointer  hover:text-white hover:bg-transparent rounded  transition bg-red-950  shadow-[0_0_10px_#ffc0c046]">
-              <Link href="/about">See More info</Link>
+              <Link href="/about">Ավելին</Link>
             </button>
           </div>
         </div>
