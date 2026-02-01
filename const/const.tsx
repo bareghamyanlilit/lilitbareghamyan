@@ -36,7 +36,7 @@ export const works = [
   },
   {
     name: "Hraviratoms",
-    link: "epc.am",
+    link: "https://jeni-vlo.vercel.app",
     src: "/hraviratoms.png",
   },
   {

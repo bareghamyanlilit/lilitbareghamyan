@@ -48,7 +48,7 @@ function ImageHome({ className }: { className?: string }) {
       src={img}
       alt="Lilit Bareghamyan"
       className={
-        `absolute bottom-0 w-[360px] md:w-[400px] lg:w-[500px] 2xl:w-[550px] object-contain ` +
+        `absolute bottom-0 w-[360px] md:w-[400px] lg:w-[400px] 2xl:w-[550px] object-contain ` +
         className
       }
       width={600}
