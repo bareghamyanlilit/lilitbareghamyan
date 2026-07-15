@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Footer from "./Footer";
 import CV from "./CvSave";
+import { Contact } from "./Contact";
 
 
 export function Home() {
@@ -145,8 +146,8 @@ export function Home() {
             >
               Ներբեռնել CV
             </a>
-            
-      
+
+
           </div>
         </div>
 
@@ -388,89 +389,8 @@ export function Home() {
           </div>
         </div>
       </section>
-
-      {/* Կապի Բաժին */}
-      <section id="contact" className="bg-gray-50 py-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-950">Հետադարձ Կապ</h2>
-          <div className="w-12 h-1 bg-[#580000] mx-auto mt-3 mb-16"></div>
-
-          <div className="grid md:grid-cols-12 gap-12">
-
-            {/* Կոնտակտային տվյալներ */}
-            <div className="md:col-span-5 space-y-6">
-              <h3 className="text-xl font-bold text-gray-950">Կապնվեք ինձ հետ</h3>
-              <p className="text-gray-500 text-sm">
-                Պատրաստ եմ քննարկել նոր նախագծեր, համագործակցություններ կամ աշխատանքային առաջարկներ։
-              </p>
-
-              <div className="space-y-4 text-sm text-gray-600">
-                <div className="flex items-center gap-3">
-                  <span className="text-[#580000]">📍</span>
-                  <span>Հայաստան, Վաղարշապատ / Երևան</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[#580000]">📞</span>
-                  <a href="tel:+37477760204" className="hover:text-[#580000] transition-colors">+374 77 76 02 04</a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[#580000]">✉️</span>
-                  <a href="mailto:lilit.themes@gmail.com" className="hover:text-[#580000] transition-colors">lilit.themes@gmail.com</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Կապի Ֆորմա (Ֆրոնտենդային փոփոխություն՝ պահպանելով քո նախորդ բեքենդ տրամաբանությունը) */}
-            <div className="md:col-span-7">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-semibold text-gray-600 uppercase mb-1">Անուն</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#580000] transition-colors text-sm"
-                    placeholder="Ձեր անունը"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-600 uppercase mb-1">Էլ. հասցե</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#580000] transition-colors text-sm"
-                    placeholder="name@example.com"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-600 uppercase mb-1">Հաղորդագրություն</label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#580000] transition-colors text-sm"
-                    placeholder="Գրեք Ձեր հաղորդագրությունը այստեղ..."
-                    required
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full py-3.5 bg-[#580000] text-white font-semibold rounded-lg hover:bg-[#400000] transition-all text-sm shadow-lg shadow-[#580000]/10"
-                >
-                  Ուղարկել Հաղորդագրությունը
-                </button>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      
+      <Contact />
 
       <Footer />
     </div>
