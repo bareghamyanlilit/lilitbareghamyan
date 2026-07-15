@@ -174,7 +174,7 @@ export function Home() {
             </div>
             <div className="md:col-span-8 space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>
-                Ես մոտիվացված Front-end ծրագրավորող եմ։ Սիրում եմ լուծել բարդ խնդիրներ,
+                Ես Front-end ծրագրավորող եմ։ Սիրում եմ լուծել բարդ խնդիրներ,
                 որոնք ինձ ստիպում են անընդհատ աճել ու զարգանալ։ Կենտրոնանում եմ մաքուր կոդի,
                 էսթետիկ դիզայնի և ժամանակակից տեխնոլոգիաների կիրառման վրա։
               </p>
@@ -187,10 +187,10 @@ export function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </span>
-                  <h3 className="text-xl font-bold text-gray-950">Իմ Փոքր Բիզնեսը՝ SiteUp.am</h3>
+                  <h3 className="text-xl font-bold text-gray-950">Իմ Փոքր Բիզնեսը՝ Site Up</h3>
                 </div>
                 <p className="text-base text-gray-600">
-                  Որպես անկախ ծրագրավորող՝ ես հիմնել եմ իմ սեփական ստարտափը՝ <strong className="text-gray-900">SiteUp.am</strong>-ը,
+                  Որպես անկախ ծրագրավորող՝ ես հիմնել եմ իմ սեփական ստարտափը՝ <strong className="text-gray-900">Site Up</strong>-ը,
                   որը զբաղվում է ժամանակակից, նրբաճաշակ և ինտերակտիվ թվային հրավիրատոմսերի պատրաստմամբ։
                 </p>
                 <p className="text-base text-gray-600">
@@ -205,7 +205,7 @@ export function Home() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-[#580000] hover:underline"
                   >
-                    Այցելել SiteUp
+                    Այցելել Site Up
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                   </a>
                   <a
@@ -389,7 +389,7 @@ export function Home() {
           </div>
         </div>
       </section>
-      
+
       <Contact />
 
       <Footer />
