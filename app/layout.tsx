@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {Header} from "@/components/Header";
-import {Footer} from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Lilit Bareghamyan",
   description: "Front-end developer",
+  openGraph: {
+    title: "Lilit Bareghamyan",
+    description: "Front-end developer",
+    url: "https://lilitbareghamyan.vercel.app/",
+    siteName: "Portfolio",
+    images: [
+      {
+        url: "https://lilitbareghamyan.vercel.app/es.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -17,11 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#121211] text-[#888888] ">
-        <Header/>
+      <body className="bg-[#ffffff] text-[#000000] ">
         {children}
         <Analytics/>
-        <Footer/>
       </body>
     </html>
   );
